@@ -25,6 +25,11 @@ public class PersonaController {
         return ipersonaService.getPersona();
     }
     
+    @GetMapping("personas/traer/{id}")
+    public Persona getPersona(@PathVariable Long id){
+        return ipersonaService.findPersona(id);
+    }
+    
     @PostMapping("/personas/crear")
     public String createPersona(@RequestBody Persona persona){
         ipersonaService.savePersona(persona);
