@@ -16,11 +16,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-//bien formado, sin expirar 
+//coprueba que este bien formado, sin expirar 
 @Component
 public class JwtProvider {
      private final static Logger logger = LoggerFactory.getLogger(JwtProvider.class);
-     //valores que estan en application.properties
+     //toma los valores que estan en application.properties
      @Value("${jwt.secret}")
      private String secret;
      
