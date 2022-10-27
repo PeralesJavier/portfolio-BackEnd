@@ -10,6 +10,6 @@ public interface UsuarioRepository extends JpaRepository <Usuario, Integer>{
     //3 metodos: 1 obtener un usuario a partir de nombre de usuario
     Optional <Usuario> findByNombreUsuario(String nombreUsuario);
     //Probamos con boleanos para ver si existe
-    boolean existByNombreUsuario(String nombreUsuario);
-    boolean existByEmail(String email);
+    boolean existsByNombreUsuario(String nombreUsuario);
+    boolean existsByEmail(String email);
 }

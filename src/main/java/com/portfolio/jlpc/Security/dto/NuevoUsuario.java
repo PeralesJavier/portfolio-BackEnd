@@ -5,18 +5,18 @@ import java.util.Set;
 
 
 public class NuevoUsuario {
-    private String Nombre;
+    private String nombre;
     private String nombreUsuario;
     private String email;
     private String password;
     private Set<String> roles = new HashSet<>();
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getNombreUsuario() {
