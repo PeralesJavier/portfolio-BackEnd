@@ -21,10 +21,10 @@ public class JwtEntryPoint implements AuthenticationEntryPoint{
     private final static Logger logger = LoggerFactory.getLogger(JwtEntryPoint.class);
     
     @Override
-    public void commence(HttpServletRequest req, HttpServletResponse res, AuthenticationException e) throws IOException, ServletException {
+    public void commence(HttpServletRequest req, HttpServletResponse res, AuthenticationException authException) throws IOException, ServletException {
         //aca lanzamos el error
         //Esto solo se utiliza en el desarrollo cuando la app esta lista no hay que tenerlo
-        logger.error("Fail en el metodo commence");
+        logger.error("Fail en el metodo commence ");
         // el res envia un error; rechaza todas las peticiones que no esten autenticadas
         //rechaza todas las peticiones que no esten autenticadas, manda SC_UNAUTHORIZED
         res.sendError(HttpServletResponse.SC_UNAUTHORIZED);

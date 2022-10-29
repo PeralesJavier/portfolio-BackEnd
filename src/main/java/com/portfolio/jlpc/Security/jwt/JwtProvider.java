@@ -7,8 +7,8 @@ import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.SignatureException;
 import io.jsonwebtoken.UnsupportedJwtException;
-import io.jsonwebtoken.security.SignatureException;
 import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,7 +33,7 @@ public class JwtProvider {
          UsuarioPrincipal usuarioPrincipal = (UsuarioPrincipal) authentication.getPrincipal();
          return Jwts.builder().setSubject(usuarioPrincipal.getUsername())
                  .setIssuedAt(new Date())
-                 .setExpiration(new Date(new Date().getTime() + expiration * 1000))
+                 .setExpiration(new Date(new Date().getTime()+expiration*1000))
                  .signWith(SignatureAlgorithm.HS512, secret)
                  .compact();
      }
